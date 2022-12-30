@@ -62,3 +62,77 @@ for i in range(0,10):
 ## range function
 for i in range(0,11,2): #skipping every second number, increments by 2
     print(i)
+
+
+###### While Loops
+
+c = 0
+
+while c < 5:
+    print(c)
+    if c == 3:
+        break # breaks/terminates the loop
+    c = c + 1
+
+"""
+a = 0
+
+while a < 5:
+    a = a + 1
+    if a == 3:
+        continue # skips the remeining code and heads back to the loop
+    print(a)
+
+"""
+
+b = 0
+
+while b < 5:
+    b = b + 1
+    if b == 3:
+        pass # does not do anything, placeholder for when we know what condition to put. "filler statement"
+    print(b)
+
+###### Try and Except Case
+
+try:
+    if name > 3:
+        print("Hello")
+except:
+    print("There is something wrong!")
+
+
+###### Functions
+
+def HelloWorld():
+    print("Hello World")
+
+HelloWorld()
+
+def Greeting(name):
+    print("Hi" + " " + name)
+
+Greeting("Malin")
+
+
+def addingNumbers(number1, number2):
+    print(number1 + number2)
+
+addingNumbers(5,6)
+
+def returnNumbers(number1, number2):
+    return(number1 + number2) # send back a value
+
+sum = returnNumbers(5,4)
+print(sum)
+
+###### Built in functions
+
+dir("Hello") # in python terminal displays all functions that can be used on the variable
+
+input = "Hello"
+help(input.upper) # explains what the upper function can do to hello
+
+sent = 'print("Hi")'
+eval(sent) # takes in a string and runs it as a python code
+exec(sent) # same as eval but for multiline code 
