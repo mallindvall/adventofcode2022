@@ -128,11 +128,48 @@ print(sum)
 
 ###### Built in functions
 
-dir("Hello") # in python terminal displays all functions that can be used on the variable
+#dir("Hello") # in python terminal displays all functions that can be used on the variable
 
 input = "Hello"
-help(input.upper) # explains what the upper function can do to hello
+#help(input.upper) # explains what the upper function can do to hello
 
 sent = 'print("Hi")'
-eval(sent) # takes in a string and runs it as a python code
-exec(sent) # same as eval but for multiline code 
+#eval(sent) # takes in a string and runs it as a python code
+#exec(sent) # same as eval but for multiline code
+
+
+'''
+class Person:
+    #p = Person()
+    #p # p becomes the object of the clas person
+    # self referes to the currect object/Instance you have - in this case p. Meaning we are calling the function
+    # Person.getName(p, ) - sending in no parameter
+
+    def getName(self):
+        print("Malin")
+    def getAge(self):
+        print("16")
+
+p = Person()
+
+p.getName()
+p.getAge()
+
+'''
+
+class Person:
+    
+    def __init__(self, name, age): #init function to take in the parameters you want to be created, assosiated with the object
+        self.name = name
+        self.age = age
+
+    def getName(self):
+        print("Your name is " + self.name)
+
+    def getAge(self):
+        print("Your age is " + self.age)
+
+
+p1 = Person("Leif", "63")
+
+p1.getName()
