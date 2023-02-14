@@ -1,6 +1,3 @@
-name = "Malin"
-lastname = "Lindvall"
+course = 'git'
 
-fullname = name + " " + lastname
-
-print ("Hi, now I will tell you more, let's see " + fullname)
+print ("Hi, welcome to todays session in " + course)
