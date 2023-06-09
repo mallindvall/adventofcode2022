@@ -44,3 +44,22 @@ for game in list_of_games:
 
 print(f' My score was {my_score}, my opponents score was: {opponent_score}')
 
+"""Day 2 Advent of Code 2022 - Assignment 2"""
+"""solving with dictionary of scores instead (other values)"""
+
+file_rows = open('input_day2.txt').read().splitlines()
+
+my_score_part_2 = 0
+
+scoring_dict = {
+    "A X" : 3 , "A Y": 4 , "A Z": 8,
+    "B X": 1, "B Y": 5, "B Z": 9,
+    "C X": 2, "C Y": 6, "C Z": 7
+}
+
+for row in file_rows:
+    my_score_part_2 += scoring_dict[row]
+
+
+print(f'My total score was: {my_score_part_2}')
+
