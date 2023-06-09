@@ -1,15 +1,10 @@
 """ Day 1 Advent of Code 2022 - Assignment 1"""
 
-import requests
+total = []
 
-url = 'https://adventofcode.com/2022/day/1/input'
+elves = open('elves_calories.txt').read().split('\n\n') #splits file on double new lines, it contains one list where each elf is separated by ', '
 
-response = requests.get(url)
-content = response.text
+for elf in elves:
+    total.append(sum(map(int, elf.split()))) #default split() splits on ' ' which is the element beween elfs. map converts the text elements in the list to int. 
 
-file_path = 'reindeer_calories.txt'
-
-with open(file_path, 'w') as file:
-    file.write(content)
-
-print("Content saved to: ", file_path)
+print(max(total))
