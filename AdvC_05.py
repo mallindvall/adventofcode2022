@@ -15,7 +15,7 @@
 #    amount, source, target = [int(entry) for entry in line.strip().split(' ') if entry.isdigit()]
 
 ####### FROM YOUTUBE SOLUTION #####################
-
+# === source: https://www.youtube.com/watch?v=LvH2DU1bARk ====
 
 with open('input_day5.txt') as input_file:
      stack_strings, instructions = (i.splitlines() for i in input_file.read().strip('\n').split('\n\n'))
@@ -42,12 +42,16 @@ def getStackEnds():
     for stack in stacks:
         final_string += stacks[stack][-1]
     print(final_string)
+
+
+def emptyStack():
+    for value in stacks:
+        stacks[value] = []
   
 
 
 # ==== PART 1 ====
 loadStacks()
-
 
 for instruction in instructions:
     moves, source, target = [int(entry) for entry in instruction.strip().split(' ') if entry.isdigit()]
@@ -57,13 +61,24 @@ for instruction in instructions:
         stacks[target].append(crate_removed)
 
 
+#displayStacks()
+getStackEnds() 
+
+ # ===== PART 2 =====
+
+emptyStack()
+loadStacks()
+
+for instruction in instructions:
+    moves, source, target = [int(entry) for entry in instruction.strip().split(' ') if entry.isdigit()]
+
+    crates_to_remove = stacks[source][-moves:] # finding out which crates to move
+    stacks[source] = stacks[source][:-moves] # removing crates
+
+    for crate in crates_to_remove:
+        stacks[target].append(crate) # adding crates to different stack
+
 displayStacks()
 getStackEnds() 
-        
-    
-
- 
-
-
 
 
