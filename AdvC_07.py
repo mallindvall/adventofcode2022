@@ -43,7 +43,12 @@ def compute_dir_size(d: str):
 compute_dir_size('')
 
 #=== PART 1===
-# ===== source advc slack channel
+# ===== source advc slack channel Kristoffer Hallqvist
 
 print(f' The answer is: {sum(v for v in dirsizes.values() if v < 100000)}')
 
+
+# === PART 2 ===
+# ===== source advc slack channel
+
+print('Part 2: Answer is: ', min(v for v in dirsizes.values() if v > (dirsizes[''] - 40000000)))
